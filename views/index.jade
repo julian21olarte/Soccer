@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	header
+		.container
+			.row
+				.col.s12.m12
+					h1= title
+					p Welcome to #{title}
+	section
+		.container
+			.row
+				.col.s12.m4
+					.item.ci.hoverable
+						i.large.material-icons settings
+						h5 Insertar Jugadores
+						p Agregue nuevos jugadores al sistema para simular partidos.
+				.col.s12.m4
+					.item.hoverable
+						i.large.material-icons mode_edit
+						h5 Editar 
+						p Edite la plantilla de los equipos y la informacion de los jugadores.
+				.col.s12.m4
+					.item.hoverable
+						i.large.material-icons view_list
+						h5 Visualizar
+						p Visualize la informacion de los partidos y el calendario de los proximos juegos.

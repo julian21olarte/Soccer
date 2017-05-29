@@ -1,0 +1,39 @@
+body {
+  /*padding: 50px;*/
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+	color:teal;
+}
+
+a {
+  color: #00B7FF;
+}
+
+header {
+	min-height: 40vh;
+}
+section {
+	min-height: 50vh;	
+}
+
+
+.brand-logo {
+	margin-left: 20px;
+}
+
+.item {
+	display: flex;
+	flex-direction: column;
+}
+.item p, .item h5, .item i {
+	text-align: center
+}
+
+.item i {
+	color:teal;
+}
