@@ -12,14 +12,11 @@ html
 	body
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js")
-		.navbar-fixed.hoverable
-			nav.teal.darken-3
-				.nav-wrapper
-					a.brand-logo(href="#") Soccer
-					ul#nav-mobile.right.hide-on-med-and-down
-						li: a(href="#") Inicio
-						li: a(href="#") Calendario
-						li: a(href="#") Registrar
+		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js")
+
+		script(src="/javascripts/nav.js")
+
+
 				//-
 					nav.navbar.navbar-inverse.navbar-fixed-top
 						.container-fluid
@@ -34,13 +31,4 @@ html
 		block content
 
 
-
-	footer.page-footer.teal.darken-3
-		.container
-			.row
-				.col.s12.m6
-					h5.white-text Footer
-					p.black-text informacion del footer
-		.footer-copyright
-			.container
-				© 2017 Copyright Todos los derechos reservados.
+	

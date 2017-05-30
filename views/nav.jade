@@ -1,0 +1,27 @@
+.navbar-fixed.hoverable
+	nav.teal.darken-3
+		.nav-wrapper
+			a.brand-logo(href="#") Soccer
+			a.button-collapse(href="#", data-activates="mobile-demo")
+				i.material-icons menu
+			ul#nav-mobile.right.hide-on-med-and-down
+				li: a(href="/") Inicio
+				li: a(href="#") Calendario
+				li: a.dropdown-button(href="#",  data-activates="dropdown-registrar") Registrar 
+					i.material-icons.right arrow_drop_down
+				ul#dropdown-registrar.dropdown-content
+					li: a(href="#") Jugador
+					li: a(href="#") Equipo
+					li: a(href="#") Colegiado
+					li: a(href="#") Partido
+
+ul.side-nav#mobile-demo
+	li: a(href="/") Inicio
+	li: a(href="#") Calendario
+	li: a.dropdown-button(href="#",  data-activates="dropdown-registrar-side") Registrar 
+		i.material-icons.right arrow_drop_down
+	ul#dropdown-registrar-side.dropdown-content
+		li: a(href="#") Jugador
+		li: a(href="#") Equipo
+		li: a(href="#") Colegiado
+		li: a(href="#") Partido
