@@ -7,27 +7,31 @@ var bodyParser = require('body-parser');
 var mongodb = require('express-mongo-db');
 
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var routes = require('./routes');
 
 var app = express();
 
-app.use(mongodb('mongodb://localhost/soccer'));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+//app.set('view engine', 'html');
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+app.use(mongodb('mongodb://localhost/soccer'));
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
 
+app.get('/', routes.index);
+app.get('/registrar', routes.registrar);
+app.get('/main', routes.main);
 
 
 // catch 404 and forward to error handler

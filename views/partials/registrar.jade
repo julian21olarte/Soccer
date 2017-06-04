@@ -1,0 +1,13 @@
+header
+	.container
+		.row
+			.col.s12
+				h1 {{select.title}}
+section
+	.container
+		.row
+			.col.s12.m12
+				.input-field.col.s12
+					select(ng-model="select.value" material-select)
+						option(ng-repeat="value in select.choices") {{value}}
+					label seleccione
