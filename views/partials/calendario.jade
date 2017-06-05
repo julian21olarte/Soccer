@@ -1,0 +1,23 @@
+header
+	.container
+		.row
+			.col.s12
+				h1 {{title}}
+				p.grey-text {{subtitle}}
+section
+	.container
+		.row
+			.col.s12.m12
+				table.responsive-table.bordered.centered
+					thead
+						tr.teal-text.darken-3
+							th Equipos
+							th Fecha
+							th Estado
+							th Resultado
+					tbody
+						tr.hoverable(ng-repeat="x in games")
+							td {{x.local}} vs {{x.visitante}}
+							td {{x.fecha}}
+							td {{x.estado}}
+							td {{x.resultado}}

@@ -1,0 +1,40 @@
+header
+	.container
+		.row
+			.col.s12
+				h1 {{title}}
+				p.grey-text {{subtitle}}
+section
+	.container
+		.row
+			form.col.s12.m12.grey-text
+
+				.row
+					.input-field.col.s12.m6
+						input#name(type="text")
+						label Nombre
+
+					.input-field.col.s12.m6
+						input#document(type="number")
+						label Documento
+
+
+				.row
+					.input-field.col.s12.m6
+						input#age(type="number")
+						label Edad
+					.input-field.col.s12.m6
+						select(ng-model="teamSelected", material-select watch)
+							option(ng-repeat="team in teams") {{team.nombre}}
+						label Equipo
+
+
+				.row
+					.input-field.col.s12.m6
+						input#pos(type="text")
+						label Posicion
+				.row
+					.col.s12
+						button.btn.waves-effect.waves-light.right(type="submit", name="action") Registrar
+
+

@@ -21,6 +21,10 @@ section {
 	min-height: 50vh;	
 }
 
+p {
+	color:grey;
+}
+
 
 .brand-logo {
 	margin-left: 20px;

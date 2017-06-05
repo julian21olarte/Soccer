@@ -36,15 +36,9 @@ exports.index = function(req, res) {
 
 
 
-exports.main = function(req, res) {
-	console.log('llega main');
-	res.render('partials/main', {title : 'Campeonato de futbol'});
-};
 
-
-
-
-exports.registrar = function(req, res) {
-	console.log('llega registrar');
-	res.render('partials/registrar', {title : 'Registrar'});
+exports.partials = function(req, res) {
+	var name = req.params.name;
+	console.log('se llama = '+name);
+	res.render('partials/'+name);
 };

@@ -8,6 +8,7 @@ var mongodb = require('express-mongo-db');
 
 
 var routes = require('./routes');
+var crud = require('./routes/crud');
 
 var app = express();
 
@@ -24,14 +25,27 @@ app.use(mongodb('mongodb://localhost/soccer'));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+/* Home page */
 app.get('/', routes.index);
-app.get('/registrar', routes.registrar);
-app.get('/main', routes.main);
+
+/* Render partials views */
+app.get('/listarEquipos', crud.listarEquipos );
+app.post('/registrarEquipo', crud.registrarEquipo);
+
+app.get('/:name', routes.partials);
+
+
+
+
+/* CRUD */
+
+
+
+
 
 
 // catch 404 and forward to error handler

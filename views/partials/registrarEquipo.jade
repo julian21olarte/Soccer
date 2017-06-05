@@ -1,0 +1,30 @@
+header
+	.container
+		.row
+			.col.s12
+				h1 {{title}}
+				p.grey-text {{subtitle}}
+section
+	.container
+		.row
+			form.col.s12.m12.grey-text
+				
+				.row
+					.input-field.col.s12.m6
+						input#name(type="text", ng-model="nombre")
+						label Nombre del equipo
+
+					.input-field.col.s12.m6
+						input#tecnico(type="text", ng-model="tecnico")
+						label Director tecnico
+
+				.row
+					.input-field.col.s12.m12
+						input#lema(type="text", ng-model="lema")
+						label Lema
+
+				.row
+					.col.s12
+						button.btn.waves-effect.waves-light.right(type="submit", name="registrarEquipo", ng-click="registrarEquipo()") Registrar
+				
+
