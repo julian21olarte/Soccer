@@ -4,9 +4,10 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+ 
 }
 
-h1 {
+h1, h5 {
 	color:teal;
 }
 
@@ -18,7 +19,12 @@ header {
 	min-height: 40vh;
 }
 section {
-	min-height: 50vh;	
+	min-height: 50vh;
+
+}
+
+main .container {
+	border-bottom: 1px solid lightgrey;
 }
 
 p {
@@ -40,4 +46,41 @@ p {
 
 .item i {
 	color:teal;
+}
+
+
+.row-separator {
+	min-height: 20px;
+}
+
+
+table {
+	font-size: 12px;
+}
+
+
+
+
+/*******Animations!!!*********/
+
+main.ng-enter {
+	transition: 0.6s linear all;
+	transform: translateX(50vw);
+	opacity: 0;
+}
+main.ng-enter.ng-enter-active {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+
+
+tr.ng-enter {
+	transition: 0.6s linear all;
+	transform: translateX(-50vw);
+	opacity: 0;
+}
+tr.ng-enter.ng-enter-active {
+	transform: translateX(0);
+	opacity: 1;
 }

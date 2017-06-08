@@ -4,37 +4,55 @@ header
 			.col.s12
 				h1 {{title}}
 				p.grey-text {{subtitle}}
+
+
 section
 	.container
 		.row
+			.col.s12.m12
+				h5.center Listado de Arbitros
+				table.table.bordered
+					thead
+						tr
+							th Nombre
+							th Pais
+							th Posicion
+					tbody
+						tr.hoverable(ng-repeat="x in arbitros")
+							td {{x.nombre}}
+							td {{x.pais}}
+							td {{x.posicion}}
+							td
+								a.btn-floating.btn.waves-effect.waves-light.red(ng-click="remove(x)")
+									i.material-icons remove
+								
+section
+	.container
+		.row
+			h5.center Registro
 			form.col.s12.m12.grey-text
-
 				.row
 					.input-field.col.s12.m6
-						input#name(type="text")
+						input#name(type="text", ng-model="nombre")
 						label Nombre
 
 					.input-field.col.s12.m6
-						input#document(type="number")
+						input#document(type="number", ng-model="documento")
 						label Documento
 
-
 				.row
 					.input-field.col.s12.m6
-						input#age(type="number")
-						label Edad
-					.input-field.col.s12.m6
-						select(ng-model="teamSelected", material-select watch)
-							option(ng-repeat="team in teams") {{team.nombre}}
-						label Equipo
+						input#pais(type="text", ng-model="pais")
+						label Pais
 
-
-				.row
 					.input-field.col.s12.m6
-						input#pos(type="text")
+						select(ng-model="posSelected", material-select watch)
+							option(ng-repeat="pos in positions") {{pos}}
 						label Posicion
+
 				.row
 					.col.s12
-						button.btn.waves-effect.waves-light.right(type="submit", name="action") Registrar
+						button.btn.waves-effect.waves-light.right(type="submit", name="registrarArbitro", ng-click="registrarArbitro()") Registrar
+
 
 

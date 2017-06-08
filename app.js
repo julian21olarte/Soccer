@@ -16,7 +16,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-//app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -34,7 +33,21 @@ app.get('/', routes.index);
 
 /* Render partials views */
 app.get('/listarEquipos', crud.listarEquipos );
+app.get('/listarJugadores', crud.listarJugadores );
+app.get('/listarArbitros', crud.listarArbitros );
+app.get('/listarArbitrosEquipos', crud.listarArbitrosEquipos);
+app.get('/listarPartidos', crud.listarPartidos);
+
+
 app.post('/registrarEquipo', crud.registrarEquipo);
+app.post('/registrarJugador', crud.registrarJugador);
+app.post('/registrarArbitro', crud.registrarArbitro);
+app.post('/registrarPartido', crud.registrarPartido);
+
+app.post('/eliminarArbitro', crud.eliminarArbitro);
+app.post('/eliminarEquipo', crud.eliminarEquipo);
+app.post('/eliminarJugador', crud.eliminarJugador);
+app.post('/actualizarMarcador', crud.actualizarMarcador);
 
 app.get('/:name', routes.partials);
 

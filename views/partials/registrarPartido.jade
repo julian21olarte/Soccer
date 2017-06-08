@@ -1,0 +1,68 @@
+header
+	.container
+		.row
+			.col.s12
+				h1 {{title}}
+				p.grey-text {{subtitle}}
+section
+	.container
+	
+		.row
+			form.col.s12.m12.grey-text
+				.row
+					.input-field.col.s12.m4
+						select(ng-model="localSelected", material-select watch)
+							option(ng-repeat="team in teams") {{team.nombre}}
+						label Equipo local
+
+					.input-field.col.s12.m4
+						h2.center-align.teal-text VS
+
+					.input-field.col.s12.m4
+						select(ng-model="visiterSelected", material-select watch)
+								option(ng-repeat="team in teams") {{team.nombre}}
+						label Equipo visitante
+				.row
+					.input-field.col.s12.m4(ng-if="estadoSelected=='Finalizado'")
+						label.red-text Marcador Local
+						input#localGoals(type="number", ng-model="localGoals.value")
+
+					.col.s12.m4
+
+					.input-field.col.s12.m4(ng-if="estadoSelected=='Finalizado'")
+						label.red-text marcador Visitante
+						input#visiterGoals(type="number", ng-model="visiterGoals.value")
+				.row
+					.row-separator
+
+				.row
+					.input-field.col.s12.m4
+						select(ng-model="principalSelected", material-select watch)
+							option(ng-repeat="arbitro in arbitros") {{arbitro.nombre}}
+						label Arbitro Principal
+
+					.input-field.col.s12.m4
+						select(ng-model="asistente1Selected", material-select watch)
+							option(ng-repeat="arbitro in arbitros") {{arbitro.nombre}}
+						label Arbitro Asistente 1
+
+					.input-field.col.s12.m4
+						select(ng-model="asistente2Selected", material-select watch)
+							option(ng-repeat="arbitro in arbitros") {{arbitro.nombre}}
+						label Arbitro Asistente 2
+
+				.row
+					.input-field.col.s12.m4
+						label(for="datepicker") Fecha del partido
+						input#datepicker.datepicker(input-date, type="text", format="dd/mm/yyyy", name="datepicker", ng-model="date")
+					
+					.input-field.col.s12.m4
+						select(ng-model="estadoSelected", material-select watch)
+							option(ng-repeat="estado in estados") {{estado}}
+						label Estado
+					
+					
+
+				.row
+					.col.s12
+						button.btn.waves-effect.waves-light.right(type="submit", name="registrarPartido", ng-click="registrarPartido()") Registrar

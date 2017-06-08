@@ -4,11 +4,29 @@ header
 			.col.s12
 				h1 {{title}}
 				p.grey-text {{subtitle}}
+
 section
 	.container
 		.row
-			form.col.s12.m12.grey-text
-				
+			.col.s12.m12
+				h5.center Listado de Equipos
+				table.table.bordered
+					thead
+						tr
+							th Nombre
+							th Tecnico
+					tbody
+						tr.hoverable(ng-repeat="x in teams")
+							td {{x.nombre}}
+							td {{x.tecnico}}
+							td
+								a.btn-floating.btn.waves-effect.waves-light.red(ng-click="remove(x)")
+									i.material-icons remove
+section
+	.container
+		.row
+			form.col.s12.m12.grey-text.border
+				h5.center Registro
 				.row
 					.input-field.col.s12.m6
 						input#name(type="text", ng-model="nombre")

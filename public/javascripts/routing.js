@@ -22,6 +22,16 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         controller: 'registrarEquipoController'
       })
 
+        .when('/registrarArbitro', {
+        templateUrl: '/registrarArbitro',
+        controller: 'registrarArbitroController'
+      })
+
+        .when('/registrarPartido', {
+        templateUrl: '/registrarPartido',
+        controller: 'registrarPartidoController'
+      })
+
        .when('/calendario', {
         templateUrl: '/calendario',
         controller: 'calendarioController'
