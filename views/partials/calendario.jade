@@ -2,13 +2,13 @@ header
 	.container
 		.row
 			.col.s12
-				h1 {{title}}
-				p.grey-text {{subtitle}}
+				h1.center {{title}}
+				p.center.grey-text {{subtitle}}
 section
 	.container
 		.row
 			.col.s12.m12
-				table.responsive-table.bordered.centered
+				table.table.bordered.centered
 					thead
 						tr.teal-text.darken-3
 							th Equipos
@@ -17,25 +17,28 @@ section
 							th Resultado
 					tbody
 						tr.hoverable(ng-repeat="x in games")
-							td {{x.local.nombre}} vs {{x.visitante.nombre}}
-							td {{getFecha(x.fecha)}}
-							td {{x.estado}}
-							td {{x.resultado}}
+							td.text1.teal-text.darken-4 {{x.local.nombre}} vs {{x.visitante.nombre}}
+							td.grey-text.darken-2 {{getFecha(x.fecha)}}
+							td.grey-text.darken-2 {{x.estado}}
+							td.teal-text.accent-3 {{x.resultado}}
 							td
 								a.btn-floating.btn.waves-effect.waves-light.blue(ng-if="x.estado=='Pendiente'", ng-click="storageGame(x)" data-target="modal" modal)
 									i.material-icons mode_edit
 
 #modal.modal
 	.modal-content
-		h4.teal-text Marcador
-		p Modifique el marcador del partido.
+		h4.teal-text.center {{game.local.nombre}} - {{game.visitante.nombre}}
+		p.center Modifique el marcador del partido.
 			.row
+
 				.input-field.col.s12.m6
 					label.red-text Marcador Local
 					input#localGoals(type="number", ng-model="localGoals.value")
+
 				.input-field.col.s12.m6
 					label.red-text marcador Visitante
 					input#visiterGoals(type="number", ng-model="visiterGoals.value")
+
 	.modal-footer
 		a.btn-floating.btn-large.waves-effect.waves-light.blue(ng-click="edit()")
 			i.material-icons done

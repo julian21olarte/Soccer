@@ -2,8 +2,8 @@ header
 	.container
 		.row
 			.col.s12
-				h1 {{title}}
-				p.grey-text {{subtitle}}
+				h1.center {{title}}
+				p.center.grey-text {{subtitle}}
 
 
 section
@@ -13,17 +13,17 @@ section
 				h5.center Listado de Arbitros
 				table.table.bordered
 					thead
-						tr
+						tr.teal-text.darken-3
 							th Nombre
 							th Pais
 							th Posicion
 					tbody
 						tr.hoverable(ng-repeat="x in arbitros")
-							td {{x.nombre}}
-							td {{x.pais}}
-							td {{x.posicion}}
+							td.text1.teal-text.darken-3 {{x.nombre}}
+							td.grey-text.darken-2 {{x.pais}}
+							td.grey-text.darken-2 {{x.posicion}}
 							td
-								a.btn-floating.btn.waves-effect.waves-light.red(ng-click="remove(x)")
+								a.btn-floating.btn.waves-effect.waves-light.red.darken-3(ng-click="remove(x)")
 									i.material-icons remove
 								
 section

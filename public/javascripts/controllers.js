@@ -8,7 +8,6 @@ app
   .controller('mainController', ['$scope', function($scope)
   {
     $scope.title = "Campeonato de futbol";
-
   }])
 
 

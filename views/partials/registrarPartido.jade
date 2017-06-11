@@ -2,11 +2,10 @@ header
 	.container
 		.row
 			.col.s12
-				h1 {{title}}
-				p.grey-text {{subtitle}}
+				h1.center {{title}}
+				p.center.grey-text {{subtitle}}
 section
 	.container
-	
 		.row
 			form.col.s12.m12.grey-text
 				.row
@@ -15,8 +14,8 @@ section
 							option(ng-repeat="team in teams") {{team.nombre}}
 						label Equipo local
 
-					.input-field.col.s12.m4
-						h2.center-align.teal-text VS
+					.input-field.col.s12.m2
+						h2.center.teal-text.darken-4 VS
 
 					.input-field.col.s12.m4
 						select(ng-model="visiterSelected", material-select watch)

@@ -88,9 +88,9 @@ exports.eliminarEquipo = function (req, res) {
 	console.log('si entra');
 	req.db.collection('equipo').remove({ '_id': new ObjectId(req.query.id) }, function (err, result1) {
 		if (err) {
-			throw err;
 			console.log('ERROR');
 			console.log(err);
+			throw err;
 		}
 		else {
 			req.db.collection('jugador').remove({ 'equipo._id': new ObjectId(req.query.id) }, function (err, result2) {
@@ -278,9 +278,9 @@ exports.actualizarMarcador = function (req, res) {
 
 	req.db.collection('partido').update({ '_id': new ObjectId(req.query.id) }, { $set: { 'resultado': req.query.resultado, 'estado': 'Finalizado' } }, function (err, result) {
 		if (err) {
-			throw err;
 			console.log('ERROR');
 			console.log(err);
+			throw err;
 		}
 		else {
 			console.log('NO ERROR');

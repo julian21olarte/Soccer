@@ -2,12 +2,12 @@
 	nav.teal.darken-3
 		.nav-wrapper
 			a.brand-logo(href="#") Soccer
-			a.button-collapse(href="#", data-activates="mobile-demo", data-closeonclick="false")
+			a.button-collapse(href="#", data-activates="mobile-demo", data-closeonclick="true")
 				i.material-icons menu
 			ul#nav-mobile.right.hide-on-med-and-down
 				li: a(href="/") Inicio
 				li: a(href="#!/calendario") Calendario
-				li: a.dropdown-button(href="#",  data-activates="dropdown-registrar") Registrar 
+				li: a.dropdown-button(href="#",  data-activates="dropdown-registrar") Registrar
 					i.material-icons.right arrow_drop_down
 				ul#dropdown-registrar.dropdown-content
 					li: a(href="#!/registrarJugador") Jugador
@@ -15,13 +15,14 @@
 					li: a(href="#!/registrarPartido") Partido
 					li: a(href="#!/registrarArbitro") Arbitro
 
-ul.side-nav#mobile-demo
-	li: a(href="/") Inicio
-	li: a(href="#!/calendario") Calendario
-	li: a.dropdown-button(href="#",  data-activates="dropdown-registrar-side") Registrar 
-		i.material-icons.right arrow_drop_down
-	ul#dropdown-registrar-side.dropdown-content
-		li: a(href="#") Jugador
-		li: a(href="#") Equipo
-		li: a(href="#") Colegiado
-		li: a(href="#") Partido
+ul.side-nav.teal.darken-4#mobile-demo
+	li: .backgroundNav
+	li: a.white-text(href="/") Inicio
+	li: a.white-text(href="#!/calendario") Calendario
+	li: a.white-text.dropdown-button(href="#",  data-activates="dropdown-registrar-side") Registrar 
+		i.material-icons.right.white-text arrow_drop_down
+	ul#dropdown-registrar-side.dropdown-content.teal.darken-2
+		li: a.white-text(href="#!/registrarJugador") Jugador
+		li: a.white-text(href="#!/registrarEquipo") Equipo
+		li: a.white-text(href="#!/registrarPartido") Partido
+		li: a.white-text(href="#!/registrarArbitro") Arbitro
