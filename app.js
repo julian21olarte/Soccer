@@ -20,7 +20,8 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
-app.use(mongodb('mongodb://localhost/soccer'));
+//app.use(mongodb('mongodb://localhost/soccer'));
+app.use(mongodb('mongodb://julian21olarte:julian21olarte@ds143132.mlab.com:43132/soccer'));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
